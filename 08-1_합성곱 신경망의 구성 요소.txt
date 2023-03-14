@@ -36,3 +36,18 @@ Average풀링 : 평균값 사용
 합성곱 층 : 1. 이미지 / 2. 커널(필텈) => 3. 특성맵 => 활성화 함수 (ReLU)
 풀링 층 : 1. 풀링 => 특성맵 => 1차원
 완전 연결 층 : 출력층 => 활성화 함수(softmax)
+
+```
+# 실행마다 동일한 결과를 얻기 위해 케라스에 랜덤 시드를 사용하고 텐서플로 연산을 결정적으로 만듭니다. 
+import tensorflow as tf
+
+tf.keras.utils.set_random_seed(42)
+tf.config.experimental.enable_op_determinism()
+```
+
+```
+keras.utils.plot_model(model, show_shapes=True, to_file='cnn-architecture.png', dpi=300)
+```
+합성곱 신경망 만들고 훈련
+케라스 합성곱 신경망
+
